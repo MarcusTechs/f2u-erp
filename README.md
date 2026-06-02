@@ -1,6 +1,9 @@
+
 # 🚀 F2U ERP — Sistema ERP Open Source em PHP
 
 **F2U ERP** é um sistema **ERP (Enterprise Resource Planning)** leve, completo e gratuito, desenvolvido em **PHP puro** com suporte a **SQLite** e **MySQL**.
+---
+<img width="1740" height="904" alt="ChatGPT Image 2 de jun  de 2026, 18_17_55" src="https://github.com/user-attachments/assets/2a84b961-5ff9-4a58-a380-05751c094357" />
 
 Ideal para **pequenas e médias empresas brasileiras** que buscam uma solução moderna, eficiente e sem custos de licenciamento.
 
