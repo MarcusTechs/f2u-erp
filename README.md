@@ -1,142 +1,232 @@
-# F2U ERP - Sistema ERP Open Source em PHP
+# 🚀 F2U ERP — Sistema ERP Open Source em PHP
 
-**F2U ERP** e um sistema ERP leve, completo e gratuito, desenvolvido em PHP puro com MySQL. Ideal para pequenas e medias empresas brasileiras.
+**F2U ERP** é um sistema **ERP (Enterprise Resource Planning)** leve, completo e gratuito, desenvolvido em **PHP puro** com suporte a **SQLite** e **MySQL**.
 
----
-
-## Funcionalidades
-
-- PDV - Ponto de Venda com leitor de codigo de barras
-- Produtos - Cadastro com estoque, NCM, custos e precos
-- Clientes - Cadastro com CPF/CNPJ
-- Relatorios - Vendas, estoque minimo, lucro
-- Orcamentos - Envio por link com aprovacao online
-- NF-e - Emissao de Nota Fiscal Eletronica (NFePHP)
-- Dashboard - Resumo do dia, alertas de estoque
-- Multi-usuario - Perfis admin e vendedor
+Ideal para **pequenas e médias empresas brasileiras** que buscam uma solução moderna, eficiente e sem custos de licenciamento.
 
 ---
 
-## Instalacao
+# ✨ Funcionalidades
 
-### Requisitos
+### 🛒 PDV (Ponto de Venda)
 
-- PHP 8.1+
-- MySQL 5.7+ ou MariaDB 10.3+
-- Extensoes: `pdo_mysql`, `openssl`, `curl`, `soap`
+* Leitor de código de barras
+* Controle rápido de vendas
+* Fechamento de caixa
 
-### Passo a passo
+### 📦 Gestão de Produtos
+
+* Cadastro completo de produtos
+* Controle de estoque
+* NCM, custos e preços de venda
+
+### 👥 Gestão de Clientes
+
+* Cadastro de clientes
+* CPF/CNPJ
+* Histórico de compras
+
+### 📊 Relatórios Gerenciais
+
+* Relatório de vendas
+* Estoque mínimo
+* Margem de lucro
+* Indicadores operacionais
+
+### 💬 Orçamentos Online
+
+* Geração de orçamentos
+* Compartilhamento por link
+* Aprovação online pelo cliente
+
+### 🧾 Emissão de NF-e
+
+* Integração com NFePHP
+* Geração de XML
+* DANFE em PDF
+
+### 🏪 Dashboard Inteligente
+
+* Resumo do dia
+* Indicadores de desempenho
+* Alertas de estoque
+
+### 🔐 Controle de Usuários
+
+* Multiusuário
+* Perfil Administrador
+* Perfil Vendedor
+
+---
+
+# 🚀 Instalação
+
+## Requisitos
+
+* PHP 8.1+
+* MySQL 5.7+ ou MariaDB 10.3+
+* Extensões PHP:
+
+  * `pdo_mysql`
+  * `openssl`
+  * `curl`
+  * `soap`
+
+## Passo a Passo
 
 ```bash
-# 1. Clone o repositorio
+# 1. Clone o repositório
 git clone https://github.com/SEU_USUARIO/f2u-erp.git
+
+# 2. Entre na pasta do projeto
 cd f2u-erp
 
-# 2. Instale as dependencias PHP
+# 3. Instale as dependências
 php composer.phar install
 
-# 3. Configure as variaveis de ambiente
+# 4. Configure o ambiente
 cp .env.example .env
-# Edite o .env com suas credenciais do banco de dados
 
-# 4. Crie o banco de dados MySQL
+# 5. Crie o banco de dados
 mysql -u root -p -e "CREATE DATABASE f2u_erp CHARACTER SET utf8mb4;"
-
-# 5. Aponte seu servidor web (Apache/Nginx) para a pasta
-# O sistema cria as tabelas automaticamente no primeiro acesso
 ```
 
-### Variaveis de ambiente (.env)
+Configure seu servidor web (Apache ou Nginx) apontando para a pasta do projeto.
+
+As tabelas são criadas automaticamente no primeiro acesso.
+
+---
+
+# ⚙️ Variáveis de Ambiente
+
+Arquivo `.env`:
 
 ```env
 DB_HOST=localhost
 DB_NAME=f2u_erp
-DB_USER=f2u_erp_user
+DB_USER=f2u_user
 DB_PASS=sua_senha_aqui
+
 APP_SECRET=uma_chave_secreta_aleatoria_longa
 ```
 
 ---
 
-## Acesso inicial
+# 🔑 Acesso Inicial
 
-| Usuario  | Senha      | Perfil         |
-|----------|------------|----------------|
-| `admin`  | `admin123` | Administrador  |
-| `vendedor` | `vend123` | Vendedor      |
+| Usuário    | Senha      | Perfil        |
+| ---------- | ---------- | ------------- |
+| `admin`    | `admin123` | Administrador |
+| `vendedor` | `vend123`  | Vendedor      |
 
-> **Troque as senhas imediatamente apos o primeiro login!**
+> ⚠️ Troque as senhas padrão imediatamente após o primeiro login.
 
 ---
 
-## Estrutura
+# 📁 Estrutura do Projeto
 
-```
+```text
 f2u-erp/
-├── index.php       # Ponto de entrada e roteamento
-├── core.php        # Logica de negocio, banco de dados, NF-e
-├── views.php       # Interface (HTML/CSS/JS)
-├── style.css       # Estilos
-├── certs/          # Certificados digitais A1 (.pfx) - NAO versionar
+├── index.php
+├── core.php
+├── views.php
+├── style.css
+├── certs/
 ├── nfe/
-│   ├── xml/        # XMLs das NF-e emitidas
-│   ├── pdf/        # DANFEs gerados
-│   └── logs/       # Logs de comunicacao SEFAZ
-└── vendor/         # Dependencias (gerado pelo Composer)
+│   ├── xml/
+│   ├── pdf/
+│   └── logs/
+└── vendor/
+```
+
+### Descrição
+
+| Arquivo/Pasta | Função                             |
+| ------------- | ---------------------------------- |
+| `index.php`   | Ponto de entrada e roteamento      |
+| `core.php`    | Regras de negócio e banco de dados |
+| `views.php`   | Interface do sistema               |
+| `style.css`   | Estilos visuais                    |
+| `certs/`      | Certificados digitais A1           |
+| `nfe/`        | XMLs, DANFEs e logs                |
+| `vendor/`     | Dependências do Composer           |
+
+---
+
+# 🔒 Segurança
+
+O sistema implementa boas práticas de segurança:
+
+* Senhas armazenadas com `password_hash()` (bcrypt)
+* Proteção CSRF em formulários
+* Sessões seguras (`httponly` e `SameSite=Strict`)
+* PDO com Prepared Statements
+* Proteção de diretórios sensíveis via `.htaccess`
+
+---
+
+# 🧾 Configuração de NF-e
+
+Para utilizar a emissão de Nota Fiscal Eletrônica, é necessário:
+
+1. Possuir um certificado digital A1 (`.pfx`)
+2. Colocar o certificado na pasta `certs/`
+3. Possuir cadastro ativo na SEFAZ do seu estado
+4. Configurar os dados da empresa em:
+
+```text
+Configurações → Empresa
 ```
 
 ---
 
-## Seguranca
+# 🤝 Como Contribuir
 
-- Senhas com `password_hash()` (bcrypt)
-- Protecao CSRF em todos os formularios
-- Sessao com `httponly`, `samesite=Strict`
-- Queries com PDO prepared statements
-- Pastas sensiveis protegidas com `.htaccess`
+Contribuições são sempre bem-vindas.
 
----
+```bash
+# Faça um fork
 
-## NF-e
+# Crie sua branch
+git checkout -b feature/nova-funcionalidade
 
-Para emissao de NF-e, voce precisara de:
+# Commit
+git commit -m "Adiciona nova funcionalidade"
 
-1. Certificado digital A1 (`.pfx`) - coloque na pasta `certs/`
-2. Cadastro na SEFAZ do seu estado
-3. Configurar dados da empresa em **Config > Empresa**
+# Push
+git push origin feature/nova-funcionalidade
+```
 
----
-
-## Contribuindo
-
-Pull requests sao bem-vindos! Para mudancas grandes, abra uma issue primeiro.
-
-1. Fork o projeto
-2. Crie sua branch (`git checkout -b feature/nova-funcionalidade`)
-3. Commit (`git commit -m 'Adiciona nova funcionalidade'`)
-4. Push (`git push origin feature/nova-funcionalidade`)
-5. Abra um Pull Request
+Depois, abra um Pull Request.
 
 ---
 
-## Apoie o projeto (voluntario)
+# 💸 Apoie o Projeto
 
-O F2U ERP e e sempre sera **100% gratuito**. Se ele te ajudou a economizar com software, considere fazer um Pix de qualquer valor — isso ajuda a manter o projeto vivo e com novas funcionalidades.
+O **F2U ERP** é e sempre será **100% gratuito**.
 
-**Chave Pix:** `SEU_PIX_AQUI`
+Se o projeto ajudou sua empresa ou economizou custos com software, considere apoiar seu desenvolvimento através de um Pix de qualquer valor.
 
-> Qualquer valor e bem-vindo e muito apreciado!
+**Chave Pix**
 
----
-
-## Licenca
-
-MIT License — livre para usar, modificar e distribuir.
+```text
+f7bfa5e5-407f-49d3-9ed7-f9f8b0e80a5f
+```
 
 ---
 
-## Autor
+# 📄 Licença
 
-**MarcusTechs** — Desenvolvido com amor para a comunidade PHP brasileira.
+Distribuído sob a licença **MIT License**.
 
-> F2U = Free To Use — livre para usar, sempre.
+Você pode usar, modificar, estudar e distribuir livremente.
+
+---
+
+# 👨‍💻 Autor
+
+**MarcusTechs**
+
+Desenvolvido para fortalecer a comunidade PHP brasileira.
+
+> **F2U = Free To Use** — livre para usar, sempre.
