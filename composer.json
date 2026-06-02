@@ -1,0 +1,22 @@
+{
+    "name": "f2u-erp/f2u-erp",
+    "description": "F2U ERP — Sistema ERP Open Source com NF-e para pequenas empresas brasileiras",
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "php": ">=8.1",
+        "nfephp-org/sped-common": "^5.0",
+        "nfephp-org/sped-nfe": "5.1"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "F2UERP\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

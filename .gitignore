@@ -1,0 +1,27 @@
+# Banco de dados
+*.db
+*.sqlite
+*.sqlite3
+
+# Certificados digitais (NUNCA subir para o GitHub!)
+certs/*.pfx
+certs/*.p12
+certs/*.cer
+certs/*.pem
+
+# NF-e geradas (dados reais de clientes)
+nfe/xml/*.xml
+nfe/pdf/*.pdf
+nfe/logs/*.log
+
+# Dependências (instalar via composer)
+vendor/
+composer.lock
+
+# Configurações locais
+.env
+config.local.php
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
